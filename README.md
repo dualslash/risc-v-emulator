@@ -1,6 +1,6 @@
 # 64 Bit RISC-V ISA Emulator
 
-RISC-V to x86/64 instruction emulator for unix written in C++.
+RISC-V to x86/64 instruction emulator accepting RISC-V ELF binaries for Unix written in C++.
 
 ## Requirements
 
