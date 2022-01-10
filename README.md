@@ -1,4 +1,4 @@
-# 64 bit RISC-V ISA Emulator
+# 64 Bit RISC-V ISA Emulator
 
 RISC-V to x86/64 instruction emulator for unix written in C++.
 
