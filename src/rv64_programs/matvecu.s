@@ -1,0 +1,271 @@
+	.file	"matvecu.c"
+	.data
+	.align	3
+	.type	A, @object
+	.size	A, 256
+A:
+	.word	1
+	.word	1
+	.word	1
+	.word	1
+	.word	1
+	.word	1
+	.word	1
+	.word	1
+	.word	2
+	.word	2
+	.word	2
+	.word	2
+	.word	2
+	.word	2
+	.word	2
+	.word	2
+	.word	3
+	.word	3
+	.word	3
+	.word	3
+	.word	3
+	.word	3
+	.word	3
+	.word	3
+	.word	4
+	.word	4
+	.word	4
+	.word	4
+	.word	4
+	.word	4
+	.word	4
+	.word	4
+	.word	5
+	.word	5
+	.word	5
+	.word	5
+	.word	5
+	.word	5
+	.word	5
+	.word	5
+	.word	6
+	.word	6
+	.word	6
+	.word	6
+	.word	6
+	.word	6
+	.word	6
+	.word	6
+	.word	7
+	.word	7
+	.word	7
+	.word	7
+	.word	7
+	.word	7
+	.word	7
+	.word	7
+	.word	8
+	.word	8
+	.word	8
+	.word	8
+	.word	8
+	.word	8
+	.word	8
+	.word	8
+	.align	3
+	.type	B, @object
+	.size	B, 32
+B:
+	.word	34
+	.word	65
+	.word	56
+	.word	34
+	.word	23
+	.word	25
+	.word	65
+	.word	6
+	.text
+	.align	2
+	.type	matvec, @function
+matvec:
+	add	sp,sp,-48
+	sd	s0,40(sp)
+	add	s0,sp,48
+	sd	a0,-40(s0)
+	sd	a1,-48(s0)
+	sw	zero,-24(s0)
+	j	.L2
+.L5:
+	sw	zero,-20(s0)
+	j	.L3
+.L4:
+	lw	a5,-20(s0)
+	sll	a5,a5,5
+	ld	a4,-40(s0)
+	add	a3,a4,a5
+	lw	a5,-20(s0)
+	sll	a5,a5,5
+	ld	a4,-40(s0)
+	add	a4,a4,a5
+	lw	a5,-24(s0)
+	sll	a5,a5,2
+	add	a5,a4,a5
+	lw	a4,0(a5)
+	lw	a5,-20(s0)
+	sll	a5,a5,2
+	ld	a2,-48(s0)
+	add	a5,a2,a5
+	lw	a5,0(a5)
+	addw	a4,a4,a5
+	lw	a5,-24(s0)
+	sll	a5,a5,2
+	add	a5,a3,a5
+	sw	a4,0(a5)
+	lw	a5,-20(s0)
+	add	a5,a5,1
+	sll	a5,a5,5
+	ld	a4,-40(s0)
+	add	a3,a4,a5
+	lw	a5,-20(s0)
+	add	a5,a5,1
+	sll	a5,a5,5
+	ld	a4,-40(s0)
+	add	a4,a4,a5
+	lw	a5,-24(s0)
+	sll	a5,a5,2
+	add	a5,a4,a5
+	lw	a4,0(a5)
+	lw	a5,-20(s0)
+	add	a5,a5,1
+	sll	a5,a5,2
+	ld	a2,-48(s0)
+	add	a5,a2,a5
+	lw	a5,0(a5)
+	addw	a4,a4,a5
+	lw	a5,-24(s0)
+	sll	a5,a5,2
+	add	a5,a3,a5
+	sw	a4,0(a5)
+	lw	a5,-20(s0)
+	add	a5,a5,2
+	sll	a5,a5,5
+	ld	a4,-40(s0)
+	add	a3,a4,a5
+	lw	a5,-20(s0)
+	add	a5,a5,2
+	sll	a5,a5,5
+	ld	a4,-40(s0)
+	add	a4,a4,a5
+	lw	a5,-24(s0)
+	sll	a5,a5,2
+	add	a5,a4,a5
+	lw	a4,0(a5)
+	lw	a5,-20(s0)
+	add	a5,a5,2
+	sll	a5,a5,2
+	ld	a2,-48(s0)
+	add	a5,a2,a5
+	lw	a5,0(a5)
+	addw	a4,a4,a5
+	lw	a5,-24(s0)
+	sll	a5,a5,2
+	add	a5,a3,a5
+	sw	a4,0(a5)
+	lw	a5,-20(s0)
+	add	a5,a5,3
+	sll	a5,a5,5
+	ld	a4,-40(s0)
+	add	a3,a4,a5
+	lw	a5,-20(s0)
+	add	a5,a5,3
+	sll	a5,a5,5
+	ld	a4,-40(s0)
+	add	a4,a4,a5
+	lw	a5,-24(s0)
+	sll	a5,a5,2
+	add	a5,a4,a5
+	lw	a4,0(a5)
+	lw	a5,-20(s0)
+	add	a5,a5,3
+	sll	a5,a5,2
+	ld	a2,-48(s0)
+	add	a5,a2,a5
+	lw	a5,0(a5)
+	addw	a4,a4,a5
+	lw	a5,-24(s0)
+	sll	a5,a5,2
+	add	a5,a3,a5
+	sw	a4,0(a5)
+	lw	a5,-20(s0)
+	addw	a5,a5,4
+	sw	a5,-20(s0)
+.L3:
+	lw	a4,-20(s0)
+	li	a5,7
+	ble	a4,a5,.L4
+	lw	a5,-24(s0)
+	addw	a5,a5,1
+	sw	a5,-24(s0)
+.L2:
+	lw	a4,-24(s0)
+	li	a5,7
+	ble	a4,a5,.L5
+	nop
+	ld	s0,40(sp)
+	add	sp,sp,48
+	jr	ra
+	.size	matvec, .-matvec
+	.align	2
+	.type	print_diag, @function
+print_diag:
+	add	sp,sp,-48
+	sd	ra,40(sp)
+	sd	s0,32(sp)
+	add	s0,sp,48
+	sd	a0,-40(s0)
+	sw	zero,-20(s0)
+	j	.L7
+.L8:
+	lw	a5,-20(s0)
+	sll	a5,a5,5
+	ld	a4,-40(s0)
+	add	a4,a4,a5
+	lw	a5,-20(s0)
+	sll	a5,a5,2
+	add	a5,a4,a5
+	lw	a5,0(a5)
+	mv	a0,a5
+	call	print_roman
+	lw	a5,-20(s0)
+	addw	a5,a5,1
+	sw	a5,-20(s0)
+.L7:
+	lw	a4,-20(s0)
+	li	a5,7
+	ble	a4,a5,.L8
+	nop
+	ld	ra,40(sp)
+	ld	s0,32(sp)
+	add	sp,sp,48
+	jr	ra
+	.size	print_diag, .-print_diag
+	.align	2
+	.globl	main
+	.type	main, @function
+main:
+	add	sp,sp,-16
+	sd	ra,8(sp)
+	sd	s0,0(sp)
+	add	s0,sp,16
+	lui	a5,%hi(B)
+	add	a1,a5,%lo(B)
+	lui	a5,%hi(A)
+	add	a0,a5,%lo(A)
+	call	matvec
+	lui	a5,%hi(A)
+	add	a0,a5,%lo(A)
+	call	print_diag
+	mv	a5,zero
+	mv	a0,a5
+	ld	ra,8(sp)
+	ld	s0,0(sp)
+	add	sp,sp,16
+	jr	ra
+	.size	main, .-main
+	.ident	"GCC: (GNU) 5.2.0"
